@@ -72,7 +72,7 @@ export default function Home() {
           </div>
           <div className="signal-footer">
             <span><b>0%</b> de reprocessamento</span>
-            <span><b>100%</b> de foco no perfil</span>
+            <span><b>100%</b> das chamadas concluídas</span>
           </div>
         </div>
       </section>
@@ -106,7 +106,7 @@ export default function Home() {
             <span>CONFIABILIDADE DA IA</span>
             <strong>100%</strong>
             <p>das análises concluídas sem falhas ou timeouts.</p>
-            <small>0 falhas · 0 timeouts</small>
+            <small>Sem falhas · sem timeouts</small>
           </article>
           <article className="metric-card">
             <span>RUÍDO ELIMINADO</span>
