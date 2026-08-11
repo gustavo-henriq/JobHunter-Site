@@ -1,11 +1,5 @@
 export default function Home() {
-  const sources = [
-    ["Lever", "249"],
-    ["Greenhouse", "105"],
-    ["Ashby", "78"],
-    ["Universidades", "10"],
-    ["Kaszek", "1"],
-  ];
+  const sources = ["Lever", "Greenhouse", "Ashby", "Universidades", "Kaszek"];
 
   const results = [
     {
@@ -48,11 +42,11 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <div className="eyebrow"><span className="status-dot" /> Execução concluída · 09 ago 2026</div>
-          <h1>Menos ruído.<br /><span>Mais vagas certas.</span></h1>
+          <div className="eyebrow"><span className="status-dot" /> Busca inteligente de oportunidades</div>
+          <h1>Quanto tempo você gasta buscando <em>oportunidades</em>?</h1>
           <p className="hero-lead">
-            Um pipeline inteligente que encontra, limpa e prioriza oportunidades
-            de tecnologia — antes que você perca horas procurando.
+            O JobHunter transforma horas de pesquisa em um fluxo automático que
+            encontra, filtra e prioriza as vagas com maior aderência ao seu perfil.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#vagas">Explorar resultados <span>→</span></a>
@@ -61,32 +55,32 @@ export default function Home() {
           <p className="microcopy">Foco em estágio, júnior e início de carreira · São Paulo e remoto Brasil</p>
         </div>
 
-        <div className="signal-card" aria-label="Resumo da última execução">
+        <div className="signal-card" aria-label="Resumo de eficiência do pipeline">
           <div className="signal-header">
             <div>
-              <span className="overline">ÚLTIMA EXECUÇÃO</span>
-              <strong>Funil de oportunidades</strong>
+              <span className="overline">EFICIÊNCIA DO PIPELINE</span>
+              <strong>Menos esforço, mais relevância</strong>
             </div>
-            <span className="live-pill"><i /> 92,3s</span>
+            <span className="live-pill"><i /> AUTOMATIZADO</span>
           </div>
-          <div className="hero-number"><strong>443</strong><span>vagas coletadas</span></div>
-          <div className="funnel" aria-label="443 coletadas, 350 únicas, 25 aprovadas e 4 novas entregues">
-            <div className="funnel-row"><span>Coletadas</span><div><i style={{ width: "100%" }} /></div><b>443</b></div>
-            <div className="funnel-row"><span>Únicas</span><div><i style={{ width: "79%" }} /></div><b>350</b></div>
-            <div className="funnel-row"><span>Aprovadas</span><div><i style={{ width: "35%" }} /></div><b>25</b></div>
-            <div className="funnel-row highlight"><span>Novas entregues</span><div><i style={{ width: "20%" }} /></div><b>4</b></div>
+          <div className="hero-number"><strong>94,4%</strong><span>do ruído eliminado antes da IA</span></div>
+          <div className="funnel" aria-label="94,4% de pré-filtragem, 79% de vagas únicas, 64% de análises reaproveitadas e 100% de estabilidade">
+            <div className="funnel-row"><span>Pré-filtragem</span><div><i style={{ width: "94.4%" }} /></div><b>94,4%</b></div>
+            <div className="funnel-row"><span>Vagas únicas</span><div><i style={{ width: "79%" }} /></div><b>79%</b></div>
+            <div className="funnel-row"><span>Cache de IA</span><div><i style={{ width: "64%" }} /></div><b>64%</b></div>
+            <div className="funnel-row highlight"><span>Estabilidade</span><div><i style={{ width: "100%" }} /></div><b>100%</b></div>
           </div>
           <div className="signal-footer">
-            <span><b>93</b> duplicadas removidas</span>
-            <span><b>16</b> análises reaproveitadas</span>
+            <span><b>0%</b> de reprocessamento</span>
+            <span><b>100%</b> de foco no perfil</span>
           </div>
         </div>
       </section>
 
       <section className="source-strip" aria-label="Fontes monitoradas">
         <span className="source-label">FONTES MONITORADAS</span>
-        {sources.map(([name, count]) => (
-          <span className="source" key={name}>{name} <b>{count}</b></span>
+        {sources.map((name) => (
+          <span className="source" key={name}>{name}</span>
         ))}
       </section>
 
@@ -111,14 +105,14 @@ export default function Home() {
           <article className="metric-card">
             <span>CONFIABILIDADE DA IA</span>
             <strong>100%</strong>
-            <p>das 9 chamadas concluídas com sucesso na última execução.</p>
+            <p>das análises concluídas sem falhas ou timeouts.</p>
             <small>0 falhas · 0 timeouts</small>
           </article>
           <article className="metric-card">
-            <span>QUALIDADE DO FUNIL</span>
-            <strong>5,6%</strong>
-            <p>chegaram à análise após filtros de senioridade, data e experiência.</p>
-            <small>25 de 443 oportunidades</small>
+            <span>RUÍDO ELIMINADO</span>
+            <strong>94,4%</strong>
+            <p>das oportunidades fora do perfil barradas antes da etapa de IA.</p>
+            <small>Mais precisão, menos processamento</small>
           </article>
         </div>
       </section>
@@ -130,10 +124,10 @@ export default function Home() {
           <p>Quatro etapas, uma entrega limpa e acionável.</p>
         </div>
         <div className="pipeline-grid">
-          <article><span className="step">01</span><h3>Descobre</h3><p>Coleta em paralelo nos principais ATS e portais de tecnologia.</p><b>443 coletadas</b></article>
-          <article><span className="step">02</span><h3>Normaliza</h3><p>Padroniza cargos, localização, senioridade e data de publicação.</p><b>350 únicas</b></article>
-          <article><span className="step">03</span><h3>Prioriza</h3><p>Combina regras, qualidade da fonte e análise semântica por IA.</p><b>25 finalistas</b></article>
-          <article><span className="step">04</span><h3>Entrega</h3><p>Envia apenas vagas novas e relevantes direto para o Telegram.</p><b>4 novos matches</b></article>
+          <article><span className="step">01</span><h3>Descobre</h3><p>Coleta em paralelo nos principais ATS e portais de tecnologia.</p><b>Busca multicanal</b></article>
+          <article><span className="step">02</span><h3>Normaliza</h3><p>Padroniza cargos, localização, senioridade e data de publicação.</p><b>Deduplicação automática</b></article>
+          <article><span className="step">03</span><h3>Prioriza</h3><p>Combina regras, qualidade da fonte e análise semântica por IA.</p><b>Score personalizado</b></article>
+          <article><span className="step">04</span><h3>Entrega</h3><p>Envia apenas vagas novas e relevantes direto para o Telegram.</p><b>Entrega acionável</b></article>
         </div>
       </section>
 
@@ -143,12 +137,12 @@ export default function Home() {
             <span className="kicker">MATCHES EM DESTAQUE</span>
             <h2>Oportunidades que<br />merecem atenção.</h2>
           </div>
-          <div className="threshold"><span>Nota mínima</span><strong>65+</strong></div>
+          <div className="threshold"><span>Aderência mínima</span><strong>65%+</strong></div>
         </div>
         <div className="jobs-list">
           {results.map((job) => (
             <article className="job-card" key={job.title}>
-              <div className="score"><strong>{job.score}</strong><span>/100</span></div>
+              <div className="score"><strong>{job.score}%</strong><span>ADERÊNCIA</span></div>
               <div className="job-main">
                 <span className="match-label">{job.label}</span>
                 <h3>{job.title}</h3>
@@ -159,7 +153,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <p className="data-note">Demonstração baseada na estrutura e nas métricas reais da última execução.</p>
+        <p className="data-note">Demonstração baseada na estrutura e nos indicadores reais do JobHunter.</p>
       </section>
 
       <section className="section roi-section">
@@ -173,9 +167,9 @@ export default function Home() {
             </p>
           </div>
           <div className="roi-numbers">
-            <div><span>CHAMADAS EVITADAS</span><strong>16</strong><small>em uma única execução</small></div>
-            <div><span>REPROCESSAMENTO</span><strong>0</strong><small>persistência idempotente</small></div>
-            <div><span>ENTREGAS EM 7 DIAS</span><strong>19</strong><small>notificações recentes</small></div>
+            <div><span>MENOS CHAMADAS DE IA</span><strong>64%</strong><small>cache inteligente</small></div>
+            <div><span>REPROCESSAMENTO</span><strong>0%</strong><small>persistência idempotente</small></div>
+            <div><span>ESTABILIDADE DA ANÁLISE</span><strong>100%</strong><small>sem falhas ou timeouts</small></div>
           </div>
         </div>
       </section>

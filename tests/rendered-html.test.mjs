@@ -23,10 +23,12 @@ test("renders the complete JobHunter page", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>JobHunter — Vagas certas, antes do ruído<\/title>/i);
-  assert.match(html, /Menos ruído\./);
-  assert.match(html, /Mais vagas certas\./);
-  assert.match(html, /443/);
+  assert.match(html, /Quanto tempo você gasta buscando/);
+  assert.match(html, /oportunidades/);
+  assert.doesNotMatch(html, /443|350|25 de 443/);
   assert.match(html, /64%/);
+  assert.match(html, /94,4%/);
+  assert.match(html, /100%/);
   assert.match(html, /Do anúncio ao match/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|Your site is taking shape/i);
 });

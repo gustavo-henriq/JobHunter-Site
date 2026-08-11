@@ -32,7 +32,7 @@ nav a:hover { color: var(--white); }
 .eyebrow { color: var(--mint); display: flex; align-items: center; gap: 9px; margin-bottom: 28px; }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 14px var(--mint); }
 h1 { margin: 0; font-size: clamp(58px, 6.5vw, 92px); line-height: .91; letter-spacing: -.072em; font-weight: 680; }
-h1 span { color: var(--acid); }
+h1 em { color: var(--acid); font-style: italic; font-weight: inherit; }
 .hero-lead { max-width: 610px; margin: 32px 0 0; font-size: 19px; line-height: 1.62; color: #b7c5bf; letter-spacing: -.015em; }
 .hero-actions { display: flex; gap: 12px; margin-top: 38px; }
 .button { min-height: 52px; padding: 0 21px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 28px; font-size: 14px; font-weight: 700; transition: transform .2s, background .2s; }
@@ -52,9 +52,9 @@ h1 span { color: var(--acid); }
 .live-pill i { width: 5px; height: 5px; border-radius: 50%; background: var(--acid); }
 .hero-number { display: flex; align-items: baseline; gap: 12px; margin: 34px 0 29px; position: relative; }
 .hero-number strong { font-size: 66px; line-height: 1; letter-spacing: -.055em; }
-.hero-number span { color: var(--muted); font-size: 13px; }
+.hero-number span { color: var(--muted); font-size: 13px; max-width: 150px; line-height: 1.35; }
 .funnel { display: grid; gap: 14px; position: relative; }
-.funnel-row { display: grid; grid-template-columns: 108px 1fr 34px; align-items: center; gap: 12px; font-size: 12px; color: #8ba098; }
+.funnel-row { display: grid; grid-template-columns: 108px 1fr 46px; align-items: center; gap: 12px; font-size: 12px; color: #8ba098; }
 .funnel-row > div { height: 6px; border-radius: 99px; background: rgba(255,255,255,.06); overflow: hidden; }
 .funnel-row i { display: block; height: 100%; border-radius: inherit; background: #587269; }
 .funnel-row b { color: #cbd8d3; text-align: right; font: 700 12px/1 ui-monospace, monospace; }
