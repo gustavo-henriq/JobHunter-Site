@@ -1,0 +1,14 @@
+.jx-profile-pile{display:grid;position:relative;isolation:isolate;width:100%;max-width:490px;margin:50px 30px 90px 0}
+.jx .jx-profile-pile .jx-profile-card{grid-area:1/1;position:relative;inset:auto;animation:none;transform-origin:50% 65%;will-change:transform;backface-visibility:hidden;transition:background-color .3s;pointer-events:none}
+.jx .jx-profile-pile .jx-profile-card[data-rank="1"]{background:#d4cbd4}
+.jx .jx-profile-pile .jx-profile-card[data-rank="2"]{background:#ab9bb6}
+.jx .jx-profile-pile .jx-profile-card[data-rank="3"]{background:#806f8f}
+.jx-profile-pile{transition:transform 140ms ease-out;transform-origin:center;will-change:transform}
+.jx .jx-profile-pile .jx-profile-card>*{visibility:visible}
+@media(prefers-reduced-motion:reduce){.jx-profile-pile{transition:none;transform:none!important}.jx .jx-profile-pile .jx-profile-card{transition:none}}
+.jx .jx-brand-mark{display:block;width:34px;height:34px;object-fit:contain;mix-blend-mode:screen;flex:none}
+.jx .jx-bot,.jx .th-app{background:#302638}
+.jx .jx-bot .jx-brand-mark,.jx .th-app .jx-brand-mark{width:28px;height:28px}
+.jx .jx-footer .jx-logo{color:#eee8dd;gap:9px;font-size:25px}
+.jx .jx-footer .jx-logo .jx-brand-mark{width:40px;height:40px}
+@media(max-width:700px){.jx-profile-pile{width:calc(100% - 30px);max-width:420px;margin:40px 30px 100px 0}.jx .jx-profile-pile .jx-profile-card{padding:26px}}

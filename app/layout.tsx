@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jobhunter-site.pages.dev"),
   title: "JobHunter — Vagas certas, antes do ruído",
   description:
-    "Pipeline inteligente que encontra, filtra, prioriza e entrega vagas de tecnologia com IA.",
+    "Pipeline inteligente e modular que encontra, filtra e prioriza oportunidades para qualquer perfil profissional.",
   openGraph: {
     title: "JobHunter — Vagas certas, antes do ruído",
     description:
-      "Descoberta inteligente de vagas para quem está começando em tecnologia.",
+      "Descoberta inteligente de oportunidades, adaptada ao seu perfil e objetivo profissional.",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
     locale: "pt_BR",
     type: "website",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "JobHunter — Vagas certas, antes do ruído",
     description:
-      "Descoberta inteligente de vagas para quem está começando em tecnologia.",
+      "Descoberta inteligente de oportunidades, adaptada ao seu perfil e objetivo profissional.",
     images: ["/og.png"],
   },
   icons: {

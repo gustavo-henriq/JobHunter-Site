@@ -1,0 +1,53 @@
+/* Eggplant surfaces, oat cards, soft lime accents. Preview only. */
+.jx{--lime:#cadb88;--bg:#302638;--fg:#eee8dd;--soft:#bbb1be;--acid:#cadb88;--mint:#dce5b4;--ink:#302638;--line:#eee8dd1c;background:var(--bg);color:var(--fg)}
+.jx :focus-visible{outline-color:#dce5b4}
+.jx .th{background:#211b28}
+.jx .th-shade{background:linear-gradient(90deg,transparent 0%,transparent 35%,#211b2890 49%,#211b28f5 60%,#211b28 100%)}
+.jx .th-intro>p,.jx .jx-story-copy>p,.jx .jx-delivery>div>p,.jx .jx-step-content p{color:#bbb1be}
+.jx .th-skip,.jx .jx-text-link{color:#d9d1df;border-color:#d9d1df40}
+.jx .th-hint{color:#bbb1be}.jx .th-hint i{color:#cadb88;border-color:#cadb8840}
+.jx .jx-button{background:#cadb88;color:#302638;box-shadow:none}
+.jx .jx-button:hover{box-shadow:0 10px 28px #cadb8816}
+.jx .jx-skip{background:#cadb88;color:#302638}
+.jx .jx-nav nav{color:#bbb1be}
+.jx .jx-nav,.jx .jx-source-line,.jx .jx-contact{border-color:#eee8dd1c}
+.jx .jx-source-line{background:#302638}
+.jx .jx-source-line>span,.jx .jx-source-line b{color:#b4a8bb}
+.jx .jx-source-line>div{color:#d8cfde}
+.jx .jx-profile-card{background:#eee8dd;color:#302638;box-shadow:0 25px 60px #150f1b55}
+.jx .jx-profile-card>p{color:#63596b}
+.jx .jx-profile-card .jx-tags span,.jx .jx-profile-foot{border-color:#30263830}
+.jx .jx-back-one{background:#62516e;color:#eee8dd}
+.jx .jx-back-two{background:#46374f;color:#c5b7ce}
+.jx .jx-choices button{color:#ddd3e3;border-color:#eee8dd28}
+.jx .jx-choices button[aria-pressed=true]{background:#cadb88;color:#302638;border-color:#cadb88}
+.jx .jx-note,.jx .th-end>small,.jx .jx-footer>span,.jx .jx-footer>a:last-child{color:#b9aabd}
+.jx .jx-steps button{color:#baadbf;border-color:#eee8dd20}
+.jx .jx-steps button[aria-pressed=true]{background:#44364e;color:#cadb88}
+.jx .jx-step-content{background:#392d42;border-color:#eee8dd1c}
+.jx .jx-stage-label{color:#d6cbdc}
+.jx .jx-stage-track span{color:#b9aabd;border-color:#eee8dd1c}
+.jx .jx-stage-track .done{color:#cadb88;border-color:#cadb88}
+.jx .jx-efficiency{background:#eee8dd;color:#302638}
+.jx .jx-stat-grid article+article{border-color:#3026382e}
+.jx .jx-stat-grid p{color:#5d5365}
+.jx .jx-stat-grid small{color:#685e70}
+.jx .jx-telegram{background:#3b3044;border-color:#ddd1e630;box-shadow:12px 14px 0 #291f31,24px 28px 0 #251c2d}
+.jx .jx-bot,.jx .th-app{background:#302638;color:#cadb88}
+.jx .jx-message-head small{color:#beafc8}
+.jx .jx-disclosure{color:#e3d9e8;border-color:#eee8dd20}
+.jx .jx-telegram [id]>p{color:#d3c5dc}
+.jx .jx-telegram [id]>small{color:#c0b1ca}
+.jx .jx-telegram-link{background:#cadb88;color:#302638}
+.jx .th-notification{background:#3b3044;border-color:#ddd1e630;box-shadow:0 15px 45px #160f1c70}
+.jx .th-card-content b,.jx .th-notification b{color:#e2d8e8}
+.jx .th-card-content b span,.jx .th-notification b span{color:#b9a9c4}
+.jx .th-card-content small,.jx .th-notification small{color:#cdbfd6}
+.jx .th-card-content strong,.jx .th-notification strong{color:#eee8dd}
+.jx .th-card-content p,.jx .th-notification p{color:#c5b6cf}
+.jx .jx-contact{background:radial-gradient(ellipse at bottom,#80714c35,transparent 65%)}
+@media(max-width:700px){
+  .jx .th-intro>p{margin-left:auto}
+  .jx .th-shade{background:linear-gradient(180deg,#211b28 0%,#211b28d9 35%,#211b2820 68%,#211b2840 100%)}
+  .jx .jx-telegram{box-shadow:7px 9px 0 #291f31,14px 18px 0 #251c2d}
+}

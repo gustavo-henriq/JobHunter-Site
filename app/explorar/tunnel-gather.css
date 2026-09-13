@@ -1,0 +1,21 @@
+/* A continuous wire → gathering → delivery transition; the final scene keeps its reading hold. */
+.jx .th-gather-copy h2{font-size:clamp(38px,4.6vw,66px);line-height:1.08;letter-spacing:-.035em}
+.th-deliveries{position:absolute;inset:0;pointer-events:none}
+.th-delivery{position:absolute;left:0;top:0;overflow:hidden;--content:0;will-change:transform,width,height;border:0}
+.th-delivery .th-card-content{max-width:none}
+.th-delivery .th-card-content{padding:calc(16px - 4px * var(--compact,0));gap:10px}
+.th-delivery .th-card-content small{overflow:hidden;max-height:calc(16px * (1 - var(--compact,0)));margin-top:calc(3px * (1 - var(--compact,0)));opacity:calc(1 - var(--compact,0))}
+.th-delivery .th-card-content p{opacity:calc(1 - var(--compact,0))}
+.jx .th-delivery .th-app{background:#302638;box-shadow:inset 0 0 0 1px #eee8dd18}
+@media(max-width:700px){
+  .jx .th-gather-copy h2{font-size:clamp(32px,8vw,46px)}
+  .th-gather-copy{top:19%}
+  .jx .th-end{top:5%}
+  .jx .th-end h2{font-size:clamp(26px,6.5vw,36px)}
+}
+@media(max-width:360px){.jx .th-end{top:2.5%}}
+@media(prefers-reduced-motion:reduce){
+  .th-deliveries{position:relative;inset:auto;margin-top:30px}
+  .th-delivery{position:relative!important;left:auto!important;top:auto!important;transform:none!important;width:100%!important;max-width:390px;height:auto!important;min-height:132px;border-radius:18px!important;margin-top:12px;background:#3b3044!important;opacity:1!important}
+  .th-delivery .th-card-content{width:100%!important;height:auto;min-height:132px;opacity:1}
+}

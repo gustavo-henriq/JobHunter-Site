@@ -1,0 +1,28 @@
+/* Locally served Google Fonts: Outfit and IBM Plex Sans. */
+@font-face{font-family:'JH Plex';src:url('/fonts/plex-regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'JH Plex';src:url('/fonts/plex-semibold.ttf') format('truetype');font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:'JH Plex';src:url('/fonts/plex-italic.ttf') format('truetype');font-style:italic;font-weight:500;font-display:swap}
+@font-face{font-family:'JH Outfit';src:url('/fonts/outfit-medium.ttf') format('truetype');font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:'JH Outfit';src:url('/fonts/outfit-semibold.ttf') format('truetype');font-style:normal;font-weight:600;font-display:swap}
+.jx{font-family:'JH Plex',Arial,sans-serif}
+.jx h1,.jx h2,.jx h3,.jx .jx-logo,.jx .jx-stat-grid strong{font-family:'JH Outfit',Arial,sans-serif;font-weight:500;letter-spacing:-.025em}
+.jx .th h1,.jx .th-hook h2,.jx .th-end h2{letter-spacing:-.035em;font-weight:500}
+.jx em{font-family:'JH Plex',Arial,sans-serif;font-style:italic;font-weight:500;letter-spacing:-.025em;color:inherit}
+.jx .th em,.jx .jx-story-copy em{color:var(--lime)}
+.jx .jx-button,.jx .jx-choices button,.jx .jx-disclosure,.jx .jx-telegram-link,.jx .jx-tags span,.jx .jx-message-head b,.jx .jx-message-head small,.jx .th-notification,.jx .th-card-content{font-family:'JH Plex',Arial,sans-serif}
+.jx .jx-button,.jx .jx-message-head b,.jx .th-notification b,.jx .th-card-content b{font-weight:600}
+.jx .jx-eyebrow,.jx .jx-lab,.jx .th-scene-label,.jx .jx-card-top,.jx .jx-back>span{display:none}
+.jx .jx-heading h2,.jx .th h1,.jx .th-hook h2,.jx .th-end h2,.jx .jx-story-copy h2,.jx .jx-delivery h2{margin-top:0}
+.jx .jx-source-line>span,.jx .jx-stage-label,.jx .th-hint{font-family:'JH Plex',Arial,sans-serif;letter-spacing:.035em}
+.jx .jx-steps button>b{font-family:'JH Outfit',Arial,sans-serif;letter-spacing:-.015em}
+.jx .jx-stat-grid strong{letter-spacing:-.045em}
+.jx .jx-stat-grid strong span{letter-spacing:-.02em}
+.jx .jx-profile-card h3,.jx .jx-step-content h3,.jx .jx-telegram>h3{letter-spacing:-.02em}
+.jx .jx-symbol{margin-top:12px}
+.jx .th-intro>p,.jx .jx-story-copy>p,.jx .jx-delivery>div>p{line-height:1.65}
+.jx .th-intro>p{margin-top:26px}
+@media(max-width:700px){
+  .jx .th h1{font-size:clamp(35px,8.3vw,55px)}
+  .jx .th-hook h2{font-size:clamp(52px,13vw,77px)}
+  .jx .th-end h2{font-size:clamp(29px,7vw,40px)}
+}
