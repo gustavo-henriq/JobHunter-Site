@@ -31,5 +31,4 @@
 @media(prefers-reduced-motion:reduce){
   .th{height:auto}
   .th-intro,.th-end{left:auto!important;right:auto!important;margin-left:auto}
-  .th-stack{margin-left:0}
 }

@@ -1,105 +1,86 @@
-<<<<<<< HEAD
-# JobHunter-Site
-Automated job hunting pipeline — scrapes vacancies, filters and scores them with AI, and delivers the best matches via Telegram.
-=======
-# vinext-starter
+# JobHunter
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+Sistema modular de descoberta e triagem de oportunidades: encontra, filtra,
+entende e entrega — para que a pessoa receba menos ruído e mais contexto para
+decidir.
 
-## Prerequisites
+> Este repositório contém a landing page pública do JobHunter. A aplicação de
+> coleta e análise permanece privada.
 
-- Node.js `>=22.13.0`
+[![Ver demonstração](https://img.shields.io/badge/demo-online-302638?style=flat-square)](https://jobhunter-gustavoh.gustavo-hs369.chatgpt.site/)
 
-## Quick Start
+## O produto
 
-```bash
-npm install
-npm run dev
-npm run build
-```
+O JobHunter transforma uma busca espalhada em um fluxo único. Perfis são
+modulares: os critérios mudam conforme a área, o momento e o objetivo de cada
+pessoa. A interface explica esse processo com um túnel 2D guiado por scroll,
+cards de perfis e uma prévia de entrega inspirada em notificações reais.
 
-This starter does not use `wrangler.jsonc`.
+As notificações mostradas no site são demonstrações ilustrativas; não
+representam vagas abertas.
 
-## Included Shape
+## Como funciona
 
-- edit site code under `app/`
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
+### Arquitetura medalhão + IA
 
-## Workspace Auth Headers
+O diagrama abaixo documenta o fluxo e a separação entre dados brutos,
+tratamento determinístico e análise por IA. O percentual é uma observação de
+uma rodada histórica específica (não um benchmark universal):
 
-Signed-in visitors receive both `oai-authenticated-user-id` and `oai-authenticated-user-email`. Private Sites require every visitor to sign in; public Sites may also have anonymous visitors, for whom neither header is present.
+![Diagrama da arquitetura do JobHunter](docs/architecture.png)
 
-The user ID is stable for the same user on the same Site and different across Sites. Email and name are intended for display or contact purposes.
+Em um conjunto de rodadas observado, 82% dos itens foram eliminados antes da
+IA por não serem únicos ou relevantes para o perfil ativo. Os elegíveis
+seguiram para a análise contextual e tiveram o resultado salvo.
 
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
+## Interface
 
-Treat the full name as optional and fall back to email when it is absent:
+### Hero: do ruído ao fluxo
 
-```tsx
-import { headers } from "next/headers";
+![Hero do JobHunter](docs/screens/hero.png)
 
-export default async function Home() {
-  const requestHeaders = await headers();
-  const userId = requestHeaders.get("oai-authenticated-user-id");
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
+### Perfis modulares
 
-  const displayName = fullName ?? email;
-  // ...
-}
-```
+![Seleção de perfis modulares](docs/screens/profiles.png)
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+### Entrega com contexto
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+![Prévia de entrega](docs/screens/delivery.png)
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+## Evidências de eficiência
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+As métricas abaixo foram calculadas a partir de um conjunto de rodadas do
+sistema:
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+- **82%** de redução observada antes da análise por IA em uma rodada histórica;
+- **78%** de itens reaproveitados sem nova chamada de IA em um fluxo observado;
+- **42%** menos tempo entre rodadas do mesmo perfil após o reaproveitamento.
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+O foco é simples: filtros baratos removem o que não faz sentido e deixam a IA
+concentrar esforço nas oportunidades que merecem contexto.
 
-## Useful Commands
+## Stack do JobHunter
 
-- `npm run dev`: start local development
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
+- **Playwright** para automação e coleta das oportunidades;
+- **Python** para orquestração, tratamento e processamento dos dados;
+- **Gemini Flash-Lite (`gemini-flash-light`)** para análise contextual das
+  oportunidades elegíveis;
+- arquitetura **Medallion** em Bronze/Silver/Gold, com normalização, validação,
+  deduplicação e rastreabilidade;
+- arquitetura preparada para aderir a outros modelos de **LLM**;
+- perfis modulares, reuso de resultados e entrega contextualizada via bot do
+  Telegram.
 
-## Learn More
+### Stack da interface demonstrativa
 
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
->>>>>>> 6b2e0a2 (Build JobHunter product site)
+- React 19 + TypeScript, vinext (App Router) e Vite;
+- CSS modular, fontes locais e suporte a `prefers-reduced-motion`;
+- Cloudflare Worker/Sites para publicação da landing page.
+
+## Licença e escopo
+
+Este é um projeto de portfólio e demonstração de produto. O código de coleta,
+as credenciais e os dados operacionais do JobHunter não fazem parte deste
+repositório público e estão disponíveis somente no repositório privado.
+
+ByGuto.

@@ -37,7 +37,14 @@ export function ProfileDeck({ profiles, selected }: { profiles: Profile[]; selec
       preference.removeEventListener("change", schedule);
     };
   }, []);
-  useEffect(() => { mounted.current = true; return () => { mounted.current = false; nodes.current.forEach(n => n?.getAnimations().forEach(a => a.cancel())); }; }, []);
+  useEffect(() => {
+    mounted.current = true;
+    const cards = nodes.current;
+    return () => {
+      mounted.current = false;
+      cards.forEach(card => card?.getAnimations().forEach(animation => animation.cancel()));
+    };
+  }, []);
   useEffect(() => {
     desired.current = selected;
     const run = async () => {

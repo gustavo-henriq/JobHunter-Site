@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://jobhunter-gustavoh.gustavo-hs369.chatgpt.site";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jobhunter-site.pages.dev"),
+  metadataBase: new URL(siteUrl),
   title: "JobHunter — Vagas certas, antes do ruído",
   description:
     "Pipeline inteligente e modular que encontra, filtra e prioriza oportunidades para qualquer perfil profissional.",
@@ -24,6 +28,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 

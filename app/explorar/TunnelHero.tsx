@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- the tiny local brand mark is already optimized */
 
 import { useEffect, useRef } from "react";
 import "./tunnel.css";
@@ -234,7 +235,7 @@ export function TunnelHero({ title, tags }: { title: string; tags: string[] }) {
       <div className="th-deliveries" aria-label="Exemplos de notificações">
         {notificationExamples.map((job, i) =>
           <article key={i} className="th-delivery" ref={node => { deliveries.current[i] = node; }} aria-hidden="true" style={{ zIndex: 4 + i }}>
-            <div className="th-card-content"><span className="th-app"><img className="jx-brand-mark" src="/job-hunter-encaixe.png" alt="" /></span><div><b>JobHunter <span>· agora</span></b><small>Vaga encontrada</small><strong>{job.title}</strong><p>{job.detail}</p></div></div>
+            <div className="th-card-content"><span className="th-app"><img className="jx-brand-mark" src="/job-hunter-encaixe.png" alt="" width="28" height="28" /></span><div><b>JobHunter <span>· agora</span></b><small>Vaga encontrada</small><strong>{job.title}</strong><p>{job.detail}</p></div></div>
           </article>
         )}
       </div>

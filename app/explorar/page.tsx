@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- the tiny local brand mark is already optimized */
 
 import { useEffect, useRef, useState } from "react";
 import { ProfileDeck } from "./ProfileDeck";
@@ -36,7 +37,14 @@ export default function Explore() {
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add("entered"); observer.unobserve(entry.target); }
     }), { threshold: .12 });
-    targets?.forEach(target => { if (!reduced) target.classList.add("enter-ready"); observer.observe(target); });
+    targets?.forEach(target => {
+      if (!reduced) {
+        const rect = target.getBoundingClientRect();
+        const alreadyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        target.classList.add(alreadyVisible ? "entered" : "enter-ready");
+      }
+      observer.observe(target);
+    });
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -52,7 +60,22 @@ export default function Explore() {
     window.addEventListener("scroll", scroll, { passive: true });
     window.addEventListener("resize", scroll);
     update();
-    return () => { observer.disconnect(); cancelAnimationFrame(frame); window.removeEventListener("scroll", scroll); window.removeEventListener("resize", scroll); };
+    let anchorFrame = 0;
+    let anchorSettleFrame = 0;
+    const anchorId = window.location.hash.slice(1);
+    if (anchorId) {
+      anchorFrame = requestAnimationFrame(() => {
+        anchorSettleFrame = requestAnimationFrame(() => document.getElementById(anchorId)?.scrollIntoView());
+      });
+    }
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+      cancelAnimationFrame(anchorFrame);
+      cancelAnimationFrame(anchorSettleFrame);
+      window.removeEventListener("scroll", scroll);
+      window.removeEventListener("resize", scroll);
+    };
   }, []);
 
   return <main className="jx" ref={root}>
@@ -78,9 +101,9 @@ export default function Explore() {
 
     <EfficiencyStory />
 
-    <section className="jx-delivery jx-wrap" id="jx-delivery" data-enter><div><span className="jx-eyebrow">04 / DIRETO NO SEU TELEGRAM</span><h2>Chega a oportunidade.<br /><em>Fica a escolha.</em></h2><p>Saiba por que uma vaga combina com você antes de abrir mais uma aba.</p><a className="jx-text-link" href="https://t.me/gutosmboy" target="_blank" rel="noreferrer">Quero conhecer as entregas reais ↗</a></div><article className="jx-telegram"><div className="jx-message-head"><span className="jx-bot"><img className="jx-brand-mark" src="/job-hunter-encaixe.png" alt="" /></span><div><b>JobHunter Bot</b><small>Prévia de entrega · exemplo</small></div></div><h3>{profile.title}</h3><div className="jx-tags">{profile.tags.map(tag => <span key={tag}>{tag}</span>)}</div><button className="jx-disclosure" aria-expanded={details} aria-controls="jx-match-detail" onClick={() => setDetails(!details)}>Por que essa oportunidade? <span>{details ? "−" : "+"}</span></button><div id="jx-match-detail" hidden={!details}><p>{profile.reason}</p><small>Na entrega real, a análise também aponta requisitos ausentes.</small></div><a className="jx-telegram-link" href="https://t.me/gutosmboy" target="_blank" rel="noreferrer">Conversar sobre o JobHunter ↗</a><small className="jx-note">Demonstração. Não representa uma vaga aberta.</small></article></section>
+    <section className="jx-delivery jx-wrap" id="jx-delivery" data-enter><div><span className="jx-eyebrow">04 / DIRETO NO SEU TELEGRAM</span><h2>Chega a oportunidade.<br /><em>Fica a escolha.</em></h2><p>Saiba por que uma vaga combina com você antes de abrir mais uma aba.</p><a className="jx-text-link" href="https://t.me/gutosmboy" target="_blank" rel="noreferrer">Quero conhecer as entregas reais ↗</a></div><article className="jx-telegram"><div className="jx-message-head"><span className="jx-bot"><img className="jx-brand-mark" src="/job-hunter-encaixe.png" alt="" width="28" height="28" /></span><div><b>JobHunter Bot</b><small>Prévia de entrega · exemplo</small></div></div><h3>{profile.title}</h3><div className="jx-tags">{profile.tags.map(tag => <span key={tag}>{tag}</span>)}</div><button className="jx-disclosure" aria-expanded={details} aria-controls="jx-match-detail" onClick={() => setDetails(!details)}>Por que essa oportunidade? <span>{details ? "−" : "+"}</span></button><div id="jx-match-detail" hidden={!details}><p>{profile.reason}</p><small>Na entrega real, a análise também aponta requisitos ausentes.</small></div><a className="jx-telegram-link" href="https://t.me/gutosmboy" target="_blank" rel="noreferrer">Conversar sobre o JobHunter ↗</a><small className="jx-note">Demonstração. Não representa uma vaga aberta.</small></article></section>
 
     <section className="jx-contact" id="jx-contact" data-enter><span className="jx-eyebrow">SEU PRÓXIMO PASSO COMEÇA COM UMA CONVERSA</span><h2>Menos procurando.<br /><em>Mais acontecendo.</em></h2><a className="jx-button" href="https://t.me/gutosmboy" target="_blank" rel="noreferrer">Vamos conversar no Telegram <span>↗</span></a></section>
-    <div className="jx-footer jx-wrap"><a className="jx-logo" href="#jx-main"><img className="jx-brand-mark" src="/job-hunter-encaixe.png" alt="" />jobhunter</a><span>Uma criação de Gustavo Henrique.</span></div>
+    <div className="jx-footer jx-wrap"><a className="jx-logo" href="#jx-main"><img className="jx-brand-mark" src="/job-hunter-encaixe.png" alt="" width="40" height="40" />jobhunter</a><span>Uma criação de Gustavo Henrique.</span></div>
   </main>;
 }

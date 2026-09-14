@@ -9,16 +9,10 @@
 .jx .jx-button{background:#cadb88;color:#302638;box-shadow:none}
 .jx .jx-button:hover{box-shadow:0 10px 28px #cadb8816}
 .jx .jx-skip{background:#cadb88;color:#302638}
-.jx .jx-nav nav{color:#bbb1be}
-.jx .jx-nav,.jx .jx-source-line,.jx .jx-contact{border-color:#eee8dd1c}
-.jx .jx-source-line{background:#302638}
-.jx .jx-source-line>span,.jx .jx-source-line b{color:#b4a8bb}
-.jx .jx-source-line>div{color:#d8cfde}
+.jx .jx-contact{border-color:#eee8dd1c}
 .jx .jx-profile-card{background:#eee8dd;color:#302638;box-shadow:0 25px 60px #150f1b55}
 .jx .jx-profile-card>p{color:#63596b}
 .jx .jx-profile-card .jx-tags span,.jx .jx-profile-foot{border-color:#30263830}
-.jx .jx-back-one{background:#62516e;color:#eee8dd}
-.jx .jx-back-two{background:#46374f;color:#c5b7ce}
 .jx .jx-choices button{color:#ddd3e3;border-color:#eee8dd28}
 .jx .jx-choices button[aria-pressed=true]{background:#cadb88;color:#302638;border-color:#cadb88}
 .jx .jx-note,.jx .th-end>small,.jx .jx-footer>span,.jx .jx-footer>a:last-child{color:#b9aabd}
@@ -29,9 +23,6 @@
 .jx .jx-stage-track span{color:#b9aabd;border-color:#eee8dd1c}
 .jx .jx-stage-track .done{color:#cadb88;border-color:#cadb88}
 .jx .jx-efficiency{background:#eee8dd;color:#302638}
-.jx .jx-stat-grid article+article{border-color:#3026382e}
-.jx .jx-stat-grid p{color:#5d5365}
-.jx .jx-stat-grid small{color:#685e70}
 .jx .jx-telegram{background:#3b3044;border-color:#ddd1e630;box-shadow:12px 14px 0 #291f31,24px 28px 0 #251c2d}
 .jx .jx-bot,.jx .th-app{background:#302638;color:#cadb88}
 .jx .jx-message-head small{color:#beafc8}
@@ -39,12 +30,11 @@
 .jx .jx-telegram [id]>p{color:#d3c5dc}
 .jx .jx-telegram [id]>small{color:#c0b1ca}
 .jx .jx-telegram-link{background:#cadb88;color:#302638}
-.jx .th-notification{background:#3b3044;border-color:#ddd1e630;box-shadow:0 15px 45px #160f1c70}
-.jx .th-card-content b,.jx .th-notification b{color:#e2d8e8}
-.jx .th-card-content b span,.jx .th-notification b span{color:#b9a9c4}
-.jx .th-card-content small,.jx .th-notification small{color:#cdbfd6}
-.jx .th-card-content strong,.jx .th-notification strong{color:#eee8dd}
-.jx .th-card-content p,.jx .th-notification p{color:#c5b6cf}
+.jx .th-card-content b{color:#e2d8e8}
+.jx .th-card-content b span{color:#b9a9c4}
+.jx .th-card-content small{color:#cdbfd6}
+.jx .th-card-content strong{color:#eee8dd}
+.jx .th-card-content p{color:#c5b6cf}
 .jx .jx-contact{background:radial-gradient(ellipse at bottom,#80714c35,transparent 65%)}
 @media(max-width:700px){
   .jx .th-intro>p{margin-left:auto}
