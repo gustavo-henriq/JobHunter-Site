@@ -228,7 +228,7 @@ export function TunnelHero({ title, tags }: { title: string; tags: string[] }) {
         <span className="jx-eyebrow">SUA PRÓXIMA POSSIBILIDADE ESTÁ A CAMINHO</span>
         <h1>Quanto tempo<br />você gasta buscando<br /><em>oportunidades?</em></h1>
         <p>Entre tantas vagas, existe uma que faz sentido para você.</p>
-        <a href="#jx-profiles" className="th-skip">Ir direto aos perfis ↗</a>
+        <a href="https://t.me/gutosmboy" target="_blank" rel="noreferrer" className="th-skip">Ir direto para o Telegram ↗</a>
       </div>
       <div className="th-hook th-gather-copy" ref={hook}><h2>Comece a gastar<br />seu tempo com<br /><em>o que realmente importa.</em></h2></div>
       <div className="th-end" ref={end}><span className="jx-eyebrow">DO FLUXO PARA O SEU TELEGRAM</span><h2>Você segue <br />o seu dia.<br /><em>As oportunidades <br />chegam até você.</em></h2><a className="jx-button" href="#jx-profiles">Encontre seu próximo passo ↗</a></div>
