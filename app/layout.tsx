@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     images: ["/og.png"],
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: [{ url: "/job-hunter-encaixe.png", type: "image/png", sizes: "128x128" }],
+    shortcut: "/job-hunter-encaixe.png",
   },
   alternates: {
     canonical: "/",
